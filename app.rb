@@ -15,6 +15,10 @@ get '/' do
 end
 
 # This gets user information and renders it into HTML.
+#
+# Parameters:
+#
+#   * `username` (string, required)
 get '/github/users/:username' do
   user = GitHub.get("/users/#{params[:username]}")
   erb :user, :locals => user
